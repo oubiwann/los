@@ -12,6 +12,9 @@ singular form, "el LOS", "the LOS" or just "LOS" are all acceptable.
 
 Feel free to also make "loss" puns. These will be quite amusing for all, and apropos.
 
+More seriously, the initial implementation will be taken from Peter Norvig's PAIP,
+Chapter 13.
+
 
 ### Dependencies
 
