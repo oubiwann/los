@@ -34,6 +34,21 @@ The reason this project is blamed on cadar is that he made a very good argument
 that 1) there are definitely valid use cases for OOP (or AOP), and 2) we should
 offer people that flexibility.
 
+### Features
+
+#### Development Plan
+
+First, we're going to start with a simple knock-off of CLOS as developed by Peter
+Norvig in PAIP, Chapter 13. This will be done using classic ``lambda`` closures.
+Next, we'll look at using processes instead of ``lambda``s for closures. This
+is defnitely the more Erlang-y way to do it, but it may be more inefficient for
+many uses. Then, we may look at Clojure's protocols and add support for that.
+After this, the sky's the limit. Or maybe not. Who knows?
+
+#### ``lambda`` Closures
+
+* ``defclass`` - 
+* 
 
 ### Dependencies
 
@@ -52,7 +67,7 @@ Just add it to your ``rebar.config`` deps:
       ]}.
 ```
 
-And then do the usual:
+And then do the usual for your ``lfetool``-created project:
 
 ```bash
     $ rebar compile
