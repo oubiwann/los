@@ -63,7 +63,7 @@ Just add it to your ``rebar.config`` deps:
 ```erlang
     {deps, [
         ...
-        {los, ".*", {git, "git@github.com:lfe/los.git", "master"}}
+        {los, ".*", {git, "git@github.com:lfex/los.git", "master"}}
       ]}.
 ```
 
