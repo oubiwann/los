@@ -1,4 +1,4 @@
-# LFE Object System(s)
+# LFE Object System(s) [![Build Status](https://travis-ci.org/lfex/los.png?branch=master)](https://travis-ci.org/lfex/los)
 
 
 ## Introduction
