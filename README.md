@@ -88,4 +88,3 @@ To be done ...
 * [Fundamentals of CLOS](http://cl-cookbook.sourceforge.net/clos-tutorial/)
 * [A Brief Guide to CLOS](http://www.aiai.ed.ac.uk/~jeff/clos-guide.html)
 * [Polymorphism in Clojure: Protocols and Multimethods](http://clojure-doc.org/articles/language/polymorphism.html)
-* 
