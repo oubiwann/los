@@ -1,7 +1,7 @@
 Expm.Package.new(
   name: "los",
-  description: "los DESCRIPTION",
+  description: "Object System(s) for LFE",
   version: "0.0.1",
-  keywords: ["LFE", "Lisp", "Library", "API"],
-  maintainers: [[name: "YOUR NAME", email: "YOUR@EMAIL.com"]],
-  repositories: [[github: "YOUR_GITHUB_NAME/los"]])
+  keywords: ["LFE", "Lisp", "Library", "Objects", "OOP", "CLOS"],
+  maintainers: [[name: "Duncan McGreggor", email: "duncan@cogitat.io"]],
+  repositories: [[github: "lfex/los"]])

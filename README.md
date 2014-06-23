@@ -1,4 +1,4 @@
-# LFE Object System(s)
+# LFE Object System [![Build Status](https://travis-ci.org/lfex/los.png?branch=master)](https://travis-ci.org/lfex/los)
 
 
 ## Introduction
@@ -24,8 +24,7 @@ so I guess it can't all be laid at his feet.
 
 Peter Norvig said it best (especially when we take it out of context):
 
-    "Object-oriented programming turns the world of computing
-    on its side..."
+    "Object-oriented programming turns the world of computing on its side..."
 
 And now that we've got a doubly-functional programming language (Lisp + Erlang),
 we're going to turn it over on its other side.
@@ -63,7 +62,7 @@ Just add it to your ``rebar.config`` deps:
 ```erlang
     {deps, [
         ...
-        {los, ".*", {git, "git@github.com:lfe/los.git", "master"}}
+        {los, ".*", {git, "git@github.com:lfex/los.git", "master"}}
       ]}.
 ```
 
@@ -80,3 +79,11 @@ compiling LOS.
 ## Usage
 
 To be done ...
+
+
+## References
+
+* [The Common Lisp Object System MetaObject Protocol](http://www.alu.org/mop/index.html)
+* [Object Reorientation: Classes](http://www.gigamonkeys.com/book/object-reorientation-classes.html)
+* [Fundamentals of CLOS](http://cl-cookbook.sourceforge.net/clos-tutorial/)
+* [A Brief Guide to CLOS](http://www.aiai.ed.ac.uk/~jeff/clos-guide.html)
