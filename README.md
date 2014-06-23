@@ -79,3 +79,12 @@ compiling LOS.
 ## Usage
 
 To be done ...
+
+
+## References
+
+* [The Common Lisp Object System MetaObject Protocol](http://www.alu.org/mop/index.html)
+* [Object Reorientation: Classes](http://www.gigamonkeys.com/book/object-reorientation-classes.html)
+* [Fundamentals of CLOS](http://cl-cookbook.sourceforge.net/clos-tutorial/)
+* [A Brief Guide to CLOS](http://www.aiai.ed.ac.uk/~jeff/clos-guide.html)
+* 
