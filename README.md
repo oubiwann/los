@@ -24,8 +24,7 @@ so I guess it can't all be laid at his feet.
 
 Peter Norvig said it best (especially when we take it out of context):
 
-    "Object-oriented programming turns the world of computing
-    on its side..."
+    "Object-oriented programming turns the world of computing on its side..."
 
 And now that we've got a doubly-functional programming language (Lisp + Erlang),
 we're going to turn it over on its other side.
