@@ -2,8 +2,8 @@
   (export all))
 
 (defun get-los-version ()
-  (lfe-utils:get-app-src-version "src/los.app.src"))
+  (lutil:get-app-version 'los))
 
 (defun get-version ()
-  (++ (lfe-utils:get-version)
+  (++ (lutil:get-versions)
       `(#(los ,(get-los-version)))))

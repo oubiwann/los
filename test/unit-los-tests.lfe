@@ -1,11 +1,12 @@
 (defmodule unit-los-tests
+  (behaviour ltest-unit)
   (export all)
   (import
     (from lfeunit-util
       (check-failed-assert 2)
       (check-wrong-assert-exception 2))))
 
-(include-lib "deps/lfeunit/include/lfeunit-macros.lfe")
+(include-lib "ltest/include/ltest-macros.lfe")
 
-(deftest my-adder
-  (is-equal 4 (: los my-adder 2 2)))
+(deftest noop
+  (is-equal 'noop (los:noop)))

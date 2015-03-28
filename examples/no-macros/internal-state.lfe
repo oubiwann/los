@@ -22,11 +22,22 @@
 ;;
 ;; To use the code below in LFE, do the following:
 ;;
-;;  $ cd examples
-;;  $ ../bin/lfe -pa ../ebin
+;;  $ lfetool repl
 ;;
-;; > (slurp '"internal-state.lfe")
+;; > (slurp "examples/no-macros/internal-state.lfe")
 ;; #(ok internal-state)
+
+;; Let's try the single-parameter version of the function:
+;;
+;; > (set account (new-account '"Alice"))
+;; #Fun<lfe_eval.12.121758957>
+;; > (name account)
+;; "Alice"
+;; > (balance account)
+;; 0.0
+
+;; Now let's try with the parameter that takes additional parameters:
+;;
 ;; > (set account (new-account '"Alice" 100.00 0.06))
 ;; #Fun<lfe_eval.10.53503600>
 ;; > (name account)
@@ -62,27 +73,30 @@
 (defmodule internal-state
  (export all))
 
+(defun new-account (name)
+  (new-account name 0.0 0.06))
+
 (defun new-account (name balance interest-rate)
   (lambda (message)
     (case message
       ('withdraw (lambda (amt)
-                    (if (=< amt balance)
-                        (new-account name (- balance amt) interest-rate)
-                        (: erlang error 'insufficient-funds))))
-      ('deposit (lambda (amt) (new-account name (+ balance amt) interest-rate)))
-      ('balance (lambda () balance))
-      ('name (lambda () name))
+                   (if (=< amt balance)
+                       (new-account name (- balance amt) interest-rate)
+                       (error 'insufficient-funds))))
+      ('deposit (lambda (amt)
+                  (new-account name (+ balance amt) interest-rate)))
+      ('balance (lambda ()
+                  balance))
+      ('name (lambda ()
+               name))
       ('interest (lambda ()
-                    (new-account
-                      name
-                      (+ balance (* balance interest-rate))
-                      interest-rate))))))
+                   (new-account
+                     name
+                     (+ balance (* balance interest-rate))
+                     interest-rate))))))
 
 (defun get-method (object command)
   (funcall object command))
-
-(defun send (object command arg)
-  (funcall (get-method object command) arg))
 
 (defun withdraw (object amt)
   "Returns an updated account object."
