@@ -26,6 +26,12 @@ ifeq ($(OS),Darwin)
 		HOST = $(shell scutil --get ComputerName)
 endif
 
+compile: get-deps clean-ebin copy-appsrc
+	@echo "Compiling project code and dependencies ..."
+	@which rebar.cmd >/dev/null 2>&1 && \
+	PATH=$(SCRIPT_PATH) ERL_LIBS=$(ERL_LIBS) rebar.cmd compile || \
+	PATH=$(SCRIPT_PATH) ERL_LIBS=$(ERL_LIBS) rebar compile
+
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
 
@@ -89,12 +95,6 @@ shell-no-deps: compile-no-deps
 	@which clear >/dev/null 2>&1 && clear || printf "\033c"
 	@echo "Starting an Erlang shell ..."
 	@PATH=$(SCRIPT_PATH) ERL_LIBS=$(ERL_LIBS) erl
-
-compile: get-deps clean-ebin copy-appsrc
-	@echo "Compiling project code and dependencies ..."
-	@which rebar.cmd >/dev/null 2>&1 && \
-	PATH=$(SCRIPT_PATH) ERL_LIBS=$(ERL_LIBS) rebar.cmd compile || \
-	PATH=$(SCRIPT_PATH) ERL_LIBS=$(ERL_LIBS) rebar compile
 
 compile-no-deps: clean-ebin
 	@echo "Compiling only project code ..."
