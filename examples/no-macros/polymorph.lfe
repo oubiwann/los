@@ -7,7 +7,9 @@
 (defmodule polymorph
   (export all))
 
-;;; # Map-based dispatch
+
+
+;;;  Map-based dispatch ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; In this example, dispatch and implementation are inextrcably linked,
 ;;; which would make maintanence difficult in a project that relied upon
@@ -38,7 +40,9 @@
 ;;   > (area-1 '(#(type rectangle) #(length 2) #(width 4)))
 ;;   8
 
-;;; # Multi-methods
+
+
+;;;  Multi-methods ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; In this example we improve upon the previosu example by separating
 ;;; dispatch and implementation:
@@ -159,3 +163,33 @@
 ;;  * a defmethod macro which creates a concrete implementation
 ;;
 ;; For an example of that, see ./examples/macros/polymorph.lfe.
+
+
+
+;;;  Clojure protocols ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; With Clojure multimethods you’ll need to repeat dispatch
+;;; logic for each function and write a combinatorial explosion of
+;;; implementations to suit. It would be better if these functions and their
+;;; implementations could be grouped and written together. Use Clojure’s protocol
+;;; facilities to define a protocol interface and extend it with concrete
+;;; implementations:
+;;;
+;;; Define the "shape" of a Shape object:
+;;;
+;;;   (defprotocol Shape
+;;;     (area [s] "Calculate the area of a shape")
+;;;     (perimeter [s] "Calculate the perimeter of a shape"))
+;;;
+;;; Define a concrete Shape, the Rectangle:
+;;;
+;;;  (defrecord Rectangle [length width]
+;;;     Shape
+;;;     (area [this] (* length width))
+;;;     (perimeter [this] (+ (* 2 length)
+;;;                       (* 2 width))))
+;;;
+;;;   (-> Rectangle 2 4) ;; -> #user.Rectangle{: length 2, :width 4}
+;;;   (area (-> Rectangle 2 4)) ;; -> 8
+
+;; XXX explore this like we did multi-methods above, using just functions.
