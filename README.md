@@ -8,12 +8,15 @@ LOS is inspired by
 not provide macros for more than one object system. We shall see.
 
 When referring to the plural form, we recommend the Spanish "los LOS". In the
-singular form, "el LOS", "the LOS" or just "LOS" are all acceptable.
+singular form, "el LOS", "the LOS" or just "LOS" are all acceptable. LFE LOS
+may have been named after the definite article, or the town in Sweden, or the
+crater on Mars.
 
-Feel free to also make "loss" puns. These will be quite amusing for all, and apropos.
+Feel free to also make "loss" puns. These will be quite amusing for all, and
+apropos.
 
-More seriously, the initial implementation will be taken from Peter Norvig's PAIP,
-Chapter 13.
+More seriously, the initial implementation will be taken from Peter Norvig's
+PAIP, Chapter 13 as well as ideas implemented in Clojure.
 
 
 ### Why OOP?
@@ -46,12 +49,12 @@ After this, the sky's the limit. Or maybe not. Who knows?
 
 #### ``lambda`` Closures
 
-* ``defclass`` - 
-* 
+* ``defclass`` -
+*
 
 ### Dependencies
 
-This project assumes that you have [rebar](http://github.com/rebar/rebar) and 
+This project assumes that you have [rebar](http://github.com/rebar/rebar) and
 [lfetool](http://github.com/lfe/lfetool) installed somewhere in your ``$PATH``.
 
 
