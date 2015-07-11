@@ -1,5 +1,7 @@
 # LFE Object System [![Build Status](https://travis-ci.org/lfex/los.png?branch=master)](https://travis-ci.org/lfex/los)
 
+<a href="resources/images/abstract-object.png"><img src="resources/images/abstract-object-thumb.png" /></a>
+
 
 ## Introduction
 
